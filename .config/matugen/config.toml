@@ -1,0 +1,38 @@
+[config.wallpaper]
+set = false
+
+command = "swww"
+arguments = ["img", "--transition-type", "center"]
+
+[templates.hyprland]
+input_path = '~/.config/matugen/templates/hypr-colors.conf'
+output_path = '~/.config/hypr/colors/colors.conf'
+post_hook = 'hyprctl reload'
+
+[templates.kitty]
+input_path = '~/.config/matugen/templates/kitty-colors.conf'
+output_path = '~/.config/kitty/colors/colors.conf'
+post_hook = 'kill -SIGUSR1 $(pgrep kitty)'
+
+[templates.rofi]
+input_path = '~/.config/matugen/templates/rofi-colors.rasi'
+output_path = '~/.config/rofi/colors/colors.rasi'
+
+[templates.waybar]
+input_path = '~/.config/matugen/templates/colors.css'
+output_path = '~/.config/waybar/colors/colors.css'
+post_hook = 'pkill waybar; waybar &'
+
+[templates.starship]
+input_path = '~/.config/matugen/templates/starship.toml'
+output_path = '~/.config/starship.toml'
+
+[templates.cava]
+input_path = '~/.config/matugen/templates/cava'
+output_path = '~/.config/cava/config'
+post_hook = "pkill -USR1 cava"
+
+[templates.pywalfox]
+input_path = '~/.config/matugen/templates/pywalfox-template.json'
+output_path = '~/.cache/wal/colors.json'
+post_hook = 'pywalfox update'
